@@ -27,6 +27,7 @@ function darksky_Complete(result) {
     var hour1 = result.hourly.data[0]
     var time = new Date(hour1.time * 1000);
     console.log("Time: " + time.toLocaleString());
+    day_One;
 }
 function day_One(result){
     var d1Sum = result.daily.data[0].summary;
