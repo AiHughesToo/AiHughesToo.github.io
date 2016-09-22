@@ -24,7 +24,10 @@ function Google_Call(){
         success: google_Complete
     };
     }
+function google_Complete(gResult){
+ console.log(gResult.results[0].address_components.long_name)
 
+}
 
 }
 
