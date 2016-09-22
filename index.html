@@ -23,6 +23,7 @@ function Google_Call(){
         dataType: "json",
         success: google_Complete
     };
+    $.ajax(gResult);
     }
 function google_Complete(gResult){
  console.log(gResult.results[0].address_components.long_name)
