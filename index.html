@@ -17,6 +17,17 @@
 var lat1 = 37.6756;
 var lon1 = -82.7785;
 
+function Google_Call(){
+    var gResult = {
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=41653&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
+        dataType: "json",
+        success: google_Complete
+    };
+    }
+
+
+}
+
 function darksky_Complete(result) {
     console.log(result.currently.summary);
     console.log(result.currently.temperature);
