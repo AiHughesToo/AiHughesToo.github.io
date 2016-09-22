@@ -1,1 +1,258 @@
-This shit works!
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">  </script>
+<script>
+var lat1 = 37.6756;
+var lon1 = -82.7785;
+
+function darksky_Complete(result) {
+    console.log(result.currently.summary);
+    console.log(result.currently.temperature);
+    console.log(result.currently.precipProbability);
+    console.log(result.daily.summary);
+
+    var hour1 = result.hourly.data[0]
+    var time = new Date(hour1.time * 1000);
+    console.log("Time: " + time.toLocaleString());
+}
+function day_One(result){
+    var d1Sum = result.daily.data[0].summary;
+    var d1Rise = new Date(result.daily.data[0].sunriseTime *1000);
+    console.log(d1Sum);
+    console.log(d1Rise);
+
+}
+
+$(function(){
+
+        var request = {
+
+        url: "https://api.darksky.net/forecast/4c175e0918482d7e59b0b9e748006844/" + lat1 + "," + lon1,
+        dataType: "jsonp",
+        success: darksky_Complete
+        };
+
+       $.ajax(request);
+});
+
+
+
+ </script>
+    <style>
+        h2 {
+            color: #ffffff;
+        }
+        
+        .display {
+            color: #dddddd;
+            padding: 30p
+        }
+        .displayRow{
+            padding:5px;
+        }
+        
+        .tempD {
+            font-size: 100px;
+            color: #dcc504;
+        }
+    
+        .cardStyle {
+            color: #ffffff;
+            margin-bottom: 5px;
+            padding: 3px;
+            border-radius: 20px;
+            height: 250px;
+          -moz-box-shadow:    inset 0 0 20px #000000;
+          -webkit-box-shadow: inset 0 0 20px #000000;
+          box-shadow:         inset 0 0 20px #000000;
+        }
+      
+        .rStyle {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .footer {
+            height:50px;
+            color: #aaa;
+            background: #333333;
+        }
+    .logo{
+        color: #ffffff;
+        font-size: 40px;
+        margin-left: 15%;
+    }
+    </style>
+    <!--how to link to a css file-->
+    <liink rel ="stylesheet" type="text/css" href="filelink.css">
+</head>
+
+<body style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/bbground4.jpg');">
+<script>var googleAPI="AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg";</script>
+    <!--nav bar goes here with the title and the dropdown menu-->
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="continer-fluid">
+                <span class="logo">Weatherly</span>
+<button type="button" class="btn btn-default dropdown-toggle pull-right" style="margin-right: 5%; margin-top: 1%;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>
+  </button>
+  <ul class="dropdown-menu pull-right">
+    <li><a href="#">Zip</a></li>
+    <li><a href="#">City</a></li>
+    <li><a href="#">State</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+</div>
+        </nav>
+
+        <!--end nav bar -->
+        
+        <!--start of display of main day  -->
+        <div class="container display" style="background: #000000; border-radius: 500px;">
+
+            <div class="row displayRow">
+                <div class="col-md-6 col-md-offset-2 col-xs-6 col-xs-offset-2">Chance For Rain-</div>
+                <div class="col-md-4 col-xs-6 col-xs-offset-2">City:</div>
+
+                <div class="col-md-12 text-center"><span class="tempD">Temp</span>
+                </div>
+                <div class="col-md-4 col-md-offset-3 col-xs-2 col-xs-offset-4">Hi:</div>
+                <div class="col-md-4">Low</div>
+            </div>
+        </div>
+        </div>
+        <div class="container-fluid" style="margin: 5px;">
+        <!-- end of main day display -->
+
+        <!-- time goes here -->
+
+        <div class="col-md-12 text-right" style="background: #333; color: #eee;">Current Time:</div>
+        </div>
+        <!-- Start of cards -->
+<div class="container">
+      <div class="row rStyle">
+<!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/Rain-on-glass-wallpaper-HD-768x480.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                <!-- card -->
+                <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/1.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                     <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/25334-drops-845884.jpeg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+         
+         
+          </div> <!--row-->
+    
+
+    </div>
+      <!--second row of images-->
+<div class="container">
+      <div class="row rStyle">
+<!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/35454290-frost-abstract-background-in-cold-winted-day.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                <!-- card -->
+                <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/monster.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                     <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('/Users/alexhughes/Desktop/ClassWork/Day3/weatherly/weather/Rain-on-glass-wallpaper-HD-768x480.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+         
+         
+          </div> <!--row-->
+    
+
+    </div>
+        <!--end second row of images-->
+        <div class="footer text-center">
+<span>Weather information provided by the Darksky project.</span>
+            </div>
+</body>
+
+
+
+
+</html>
