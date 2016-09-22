@@ -14,8 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous">  </script>
 <script>
-var lat1 = 37.6756;
-var lon1 = -82.7785;
+var lat1 = "";
+var lon1 = "";
 
 function Google_Call(){
     var gResult = {
@@ -29,6 +29,8 @@ function google_Complete(gResult){
  console.log(gResult.results);
  console.log(gResult.results[0].geometry.location.lat);
  console.log(gResult.results[0].geometry.location.lng);
+ var lat = gResult.results[0].geometry.location.lat;
+ console.log(lat);
 };
 
 function darksky_Complete(result) {
