@@ -30,8 +30,10 @@ function google_Complete(gResult){
  console.log(gResult.results[0].geometry.location.lat);
  console.log(gResult.results[0].geometry.location.lng);
  var lat = (gResult.results[0].geometry.location.lat);
+ var lng = (gResult.results[0].geometry.location.lng);
+ console.log(lng);
  console.log(lat);
- darksky_Complete;
+
 };
 
 function darksky_Complete(result) {
