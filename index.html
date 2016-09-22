@@ -27,8 +27,8 @@ function Google_Call(){
     }
 function google_Complete(gResult){
  console.log(gResult.results);
- console.log(gResult.results[0].geometry.location);
  console.log(gResult.results[0].geometry.location.lat);
+ console.log(gResult.results[0].geometry.location.lng);
 };
 
 function darksky_Complete(result) {
