@@ -177,7 +177,12 @@ return mDtemplate;
 
         <!-- time goes here -->
 
-        <div class="col-md-12 text-right" style="background: #333; color: #eee;">Current Time:</div>
+        <div class="col-md-12 text-right" style="background: #333; color: #eee;"><span id="time"></span>
+        <script>
+var d = new Date ();
+document.getElementById("time").innerHTML = d;
+            </script>
+        </div>
         </div>
         <!-- Start of cards -->
 <div class="container">
