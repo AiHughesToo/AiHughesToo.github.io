@@ -55,18 +55,29 @@ function day_One(result){
     console.log("Tacos");
 
 }
-
-$(function(){
+function startItOff(userInput){
+    var zip = userInput;
   var gResult = {
         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
         dataType: "json",
         success: google_Complete
     };
     $.ajax(gResult);
-});
+    
+    
+};
+
+//$(function(){
+  //var gResult = {
+    //    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
+    //    dataType: "json",
+      //  success: google_Complete
+  //  };
+   // $.ajax(gResult);
+//});
 
 
-
+// object.addEventListner("click", startItOff());
  </script>
     <style>
         h2 {
@@ -123,6 +134,8 @@ $(function(){
     <nav class="navbar navbar-inverse navbar-static-top">
             <div class="continer-fluid">
                 <span class="logo">Weatherly</span>
+                <input type="text" name="userInput" id="uI"><br>
+                <button onclick = "startItOff(document.getELementById('uI').value)">Submit</button>
 <button type="button" class="btn btn-default dropdown-toggle pull-right" style="margin-right: 5%; margin-top: 1%;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>
   </button>
