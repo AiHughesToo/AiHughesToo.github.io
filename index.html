@@ -64,6 +64,7 @@ function startItOff(userInput){
 };
 
 function genMainDisplay(result){
+    console.log("I made it to the genMainDisplay");
     var mDtemplate = $("#mainDisplay").html();
     mDtemplate = mDtemplate.replace("@@temp@@", result.currently.temperature);
     console.log(result.currently.temperature);
