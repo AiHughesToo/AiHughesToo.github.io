@@ -66,8 +66,8 @@ function startItOff(userInput){
 
 function genMainDisplay(result){
     var mDtemplate = $("#mainDisplay").html();
-    mDtemplate = mDtemplate.replace("@@temp@@", wInfo.currently.temperature);
-    mDtemplate = mDtemplate.replace("@@rain@@", wInfo.currently.precipProbability);
+    mDtemplate = mDtemplate.replace("@@temp@@", wInfo.result.currently.temperature);
+    mDtemplate = mDtemplate.replace("@@rain@@", wInfo.result.currently.precipProbability);
 
 return mDtemplate;
 
