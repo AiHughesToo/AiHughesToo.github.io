@@ -43,9 +43,7 @@ function darksky_Complete(result) {
 var currnetSummary = (result.currently.summary);
 var currentTemp = (result.current.temperature);
 var wInfo = (result);
-    var hour1 = result.hourly.data[0]
-    var time = new Date(hour1.time * 1000);
-    console.log("Time: " + time.toLocaleString());
+
     var mDisplay = genMainDisplay(wInfo);
     $("mainDisplay2").append(mDisplay);
    
@@ -68,8 +66,8 @@ function startItOff(userInput){
 
 function genMainDisplay(result){
     var mDtemplate = $("#mainDisplay").html();
-    mDtemplate = mDtemplate.replace("@@temp@@", result.currently.temperature);
-    mDtemplate = mDtemplate.replace("@@rain@@", result.currently.precipProbability);
+    mDtemplate = mDtemplate.replace("@@temp@@", wInfo.currently.temperature);
+    mDtemplate = mDtemplate.replace("@@rain@@", wInfo.currently.precipProbability);
 
 return mDtemplate;
 
