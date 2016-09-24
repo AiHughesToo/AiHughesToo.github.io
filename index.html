@@ -57,6 +57,7 @@ function day_One(result){
 }
 function startItOff(userInput){
     var zip = userInput;
+    if (zip != 0){
   var gResult = {
         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
         dataType: "json",
@@ -64,7 +65,9 @@ function startItOff(userInput){
     };
     $.ajax(gResult);
     
-    
+    } else {
+        alert("need a number");
+    }
 };
 
 //$(function(){
