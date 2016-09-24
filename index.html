@@ -40,10 +40,9 @@ function darksky_Complete(result) {
     console.log(result.currently.temperature);
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
-var currnetSummary = (result.currently.summary);
-var currentTemp = (result.currently.temperature);
 var wInfo = (result);
 console.log(wInfo);
+console.log("hello");
     var mDisplay = genMainDisplay(wInfo);
     $("mainDisplay2").append(mDisplay);
    
