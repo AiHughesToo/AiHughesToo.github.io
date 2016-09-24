@@ -38,7 +38,7 @@ function darksky_Complete(result) {
 var wInfo = (result);
 
 console.log("hello 23");
-    var mDisplay = genMainDisplay(mDtemplate);
+    var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
    
 }
@@ -167,9 +167,9 @@ return mDtemplate;
         </div>
     </div>
           <!-- start of template for main display-->
-     <div id ="mainDisplay" class="display" style="background: #000000; border-radius: 500px; display: none;">
+     <div id ="mainDisplay3" class="display" style="background: #000000; border-radius: 500px; display: none;">
 
-            <div class="row displayRow">
+            <div id = "mainDisplay" class="row displayRow">
                 <div class="col-md-6 col-md-offset-2 col-xs-6 col-xs-offset-2">Chance For Rain: @@rain@@</div>
                 <div class="col-md-4 col-xs-6 col-xs-offset-2">City: @@city@@</div>
 
