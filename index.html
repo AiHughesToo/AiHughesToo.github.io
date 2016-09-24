@@ -14,11 +14,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous">  </script>
 <script>
-var lat1 = 31.7562269;
-var lon1 = -72.576824;
-
-var zip = 41501;
-
 function google_Complete(gResult){
  console.log(gResult.results);
  var lat = (gResult.results[0].geometry.location.lat);
@@ -42,7 +37,7 @@ function darksky_Complete(result) {
     console.log(result.daily.summary);
 var wInfo = (result);
 
-console.log("hello");
+console.log("hello 23");
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
    
