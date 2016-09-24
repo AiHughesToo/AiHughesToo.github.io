@@ -41,9 +41,9 @@ function darksky_Complete(result) {
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
 var wInfo = (result);
-console.log(wInfo);
+
 console.log("hello");
-    var mDisplay = genMainDisplay(wInfo);
+    var mDisplay = genMainDisplay(result);
     $("mainDisplay2").append(mDisplay);
    
 }
