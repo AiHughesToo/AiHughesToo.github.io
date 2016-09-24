@@ -61,10 +61,10 @@ function startItOff(userInput){
 function genMainDisplay(result){
     console.log("I made it to the genMainDisplay");
     var mDtemplate = $("#mainDisplay").html();
-    mDtemplate = mDtemplate.replace("@@Temp@@", result.currently.temperature),
-    mDtemplate = mDtemplate.rreplace("@@rain@@", result.currently.precipProbability),
-    mDtemplate = mDtemplate.rreplace("@@hi@@", result.currently.humidity),
-    mDtemplate = mDtemplate.rreplace("@@low@@", result.currently.summary);
+    mDtemplate = mDtemplate.replace("@@Temp@@", result.currently.temperature);
+    mDtemplate = mDtemplate.replace("@@rain@@", result.currently.precipProbability);
+    mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
+    mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
   
 
 return mDtemplate;
