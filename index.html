@@ -43,7 +43,7 @@ function darksky_Complete(result) {
 var currnetSummary = (result.currently.summary);
 var currentTemp = (result.currently.temperature);
 var wInfo = (result);
-
+console.log(wInfo);
     var mDisplay = genMainDisplay(wInfo);
     $("mainDisplay2").append(mDisplay);
    
