@@ -56,7 +56,7 @@ console.log(result.daily.summary);
 var day1 = result.daily.data[0]
 var date1 = new Date(day1.time * 1000);
 var day2 = result.daily.data[1]
-var date2 = new Date(day1.time * 1000);
+var date2 = new Date(day2.time * 1000);
 var wDisplay = $("#wDisplay").html();
 wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
 wDisplay = wDisplay.replace("@@date1@@", date1);
