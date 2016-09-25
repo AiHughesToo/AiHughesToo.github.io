@@ -52,7 +52,9 @@ $("#wCard").append(wDisplay);
 }
 
 function genWCards(result){
-console.log(result);
+console.log(result.daily.summary);
+var wDisplay = $("#wDisplay").html();
+wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
 
 }
 function startItOff(userInput){
