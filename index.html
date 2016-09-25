@@ -58,7 +58,7 @@ wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
 var day1 = result.daily.data[0].time;
 var date1 = new Date(day1 * 1000).
 wDisplay = wDisplay.replace("@@date1@@", date1);
-
+console.log (date1);
 return wDisplay;
 }
 function startItOff(userInput){
