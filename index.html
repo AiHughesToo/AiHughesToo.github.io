@@ -67,8 +67,8 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
     mDtemplate = mDtemplate.replace("@@city@@", city);
-
-return mDtemplate;
+var test = "hello";
+return [mDtemplate, test];
 
 }
 //$(function(){
