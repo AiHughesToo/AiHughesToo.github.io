@@ -68,7 +68,7 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
     mDtemplate = mDtemplate.replace("@@city@@", city);
 var test = "2nd var info";
-return [mDtemplate, test];
+return {mDtemplate : mDtemplate, test : test};
 
 }
 //$(function(){
