@@ -112,6 +112,7 @@ return mDtemplate;
             padding: 3px;
             border-radius: 20px;
             height: 250px;
+            background: #333;
           -moz-box-shadow:    inset 0 0 20px #000000;
           -webkit-box-shadow: inset 0 0 20px #000000;
           box-shadow:         inset 0 0 20px #000000;
@@ -197,17 +198,17 @@ document.getElementById("time").innerHTML = d;
             </div>
         <!--end to dialy holder-->
         <!--day cards template-->
-<div id ="dayCard" class="row row-centered">
-<div class = "col-md-10" style = "background: #ffffff;">@@weeksum@@
+<div id ="dayCard" class="row rStyle">
+<div class = "col-md-10 col-md-offset-1" style = "background: #ffffff; margin-bottom: 5px;">@@weeksum@@
     </div>
 
    
     <div class="card col-md-3 col-md-offset-1 cardStyle">
-<p>@@date1@@</p>
-<p>@@icon1@@</p>
-<span>@@hi1@@</span> <span>@@low1@@</span><br />
-<span>@@sum1@@</span><br/>
-<span>@@rain1</span>
+<p class="text-center" Style = "font-size: 20px">@@date1@@</p>
+<p class="text-center">@@icon1@@</p>
+<span>Hi: @@hi1@@  </span> <span>Low: @@low1@@</span><br />
+<spano class="text-center" >@@sum1@@</span><br/>
+<span>@@rain1@@ % chance for rain</span>
         </div>
  </div>   
         <!-- end day card template-->
