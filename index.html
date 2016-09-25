@@ -54,7 +54,7 @@ $("#wCard").append(wDisplay);
 function genWCards(result){
 console.log(result.daily.summary);
 var day1 = result.daily.data[0]
-var date1 = new Date(day1.time * 1000).slice(0, -12);
+var date1 = new Date(day1.time * 1000);
 var day2 = result.daily.data[1]
 var date2 = new Date(day2.time * 1000);
 var day3 = result.daily.data[2]
@@ -67,7 +67,7 @@ var day6 = result.daily.data[5]
 var date6 = new Date(day6.time * 1000);
 var wDisplay = $("#wDisplay").html();
 wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
-wDisplay = wDisplay.replace("@@date1@@", date1;
+wDisplay = wDisplay.replace("@@date1@@", date1.slice(0, -12);
 wDisplay = wDisplay.replace("@@hi1@@",result.daily.data[0].temperatureMax);
 wDisplay = wDisplay.replace("@@low1@@",result.daily.data[0].temperatureMin);
 wDisplay = wDisplay.replace("@@sum1@@",result.daily.data[0].summary);
