@@ -55,11 +55,21 @@ function genWCards(result){
 console.log(result.daily.summary);
 var day1 = result.daily.data[0]
 var date1 = new Date(day1.time * 1000);
+var day2 = result.daily.data[1]
+var date2 = new Date(day1.time * 1000);
 var wDisplay = $("#wDisplay").html();
 wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
 wDisplay = wDisplay.replace("@@date1@@", date1);
 wDisplay = wDisplay.replace("@@hi1@@",result.daily.data[0].temperatureMax);
-console.log (date1);
+wDisplay = wDisplay.replace("@@low1@@",result.daily.data[0].temperatureMin);
+wDisplay = wDisplay.replace("@@sum1@@",result.daily.data[0].summary);
+wDisplay = wDisplay.replace("@@rain1@@",result.daily.data[0].precipProbability);
+wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
+wDisplay = wDisplay.replace("@@date2@@", date2);
+wDisplay = wDisplay.replace("@@hi2@@",result.daily.data[1].temperatureMax);
+wDisplay = wDisplay.replace("@@low2@@",result.daily.data[1].temperatureMin);
+wDisplay = wDisplay.replace("@@sum2@@",result.daily.data[1].summary);
+wDisplay = wDisplay.replace("@@rain2@@",result.daily.data[1].precipProbability);
 
 return wDisplay;
 }
