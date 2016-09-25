@@ -38,7 +38,6 @@ function darksky_Complete(result) {
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
     console.log(city);
-    console.log(test);
 var wInfo = (result);
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
@@ -68,8 +67,8 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
     mDtemplate = mDtemplate.replace("@@city@@", city);
-var test = "2nd var info";
-return [mDtemplate, test];
+
+return mDtemplate;
 
 }
 //$(function(){
