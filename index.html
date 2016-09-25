@@ -55,7 +55,8 @@ function genWCards(result){
 console.log(result.daily.summary);
 var day1 = result.daily.data[0]
 var date1 = new Date(day1.time * 1000);
-var date1a = date1.substr(0,12);
+var date1a = date1.toString();
+date1a = date1a.substr(0,20);
 var day2 = result.daily.data[1]
 var date2 = new Date(day2.time * 1000);
 var day3 = result.daily.data[2]
