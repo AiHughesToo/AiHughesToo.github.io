@@ -67,10 +67,15 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
     mDtemplate = mDtemplate.replace("@@city@@", city);
-  
+  var mDtemplate2 = $("#mainDisplay").html();
+    mDtemplate = mDtemplate.replace("@@Temp@@", result.currently.temperature);
+    mDtemplate = mDtemplate.replace("@@rain@@", result.currently.precipProbability);
+    mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
+    mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
+    mDtemplate = mDtemplate.replace("@@city@@", city);
 
-return mDtemplate;
-return mDTemplate;
+return [mDtemplate, mDtemplate2];
+
 }
 //$(function(){
   //var gResult = {
