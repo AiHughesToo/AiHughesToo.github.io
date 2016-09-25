@@ -40,7 +40,7 @@ function darksky_Complete(result) {
     console.log(city);
     console.log(result[1]);
 var wInfo = (result);
-    var mDisplay = genMainDisplay(result);
+    var mDisplay = genMainDisplay(result[0]);
     $("#card").append(mDisplay);
    
 }
