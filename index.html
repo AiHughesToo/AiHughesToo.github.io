@@ -41,9 +41,13 @@ function darksky_Complete(result) {
 var wInfo = (result);
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
+    dayCards(result);
    
-}
+};
+function dayCards (result) {
+console.log(result)
 
+}
 function startItOff(userInput){
     var zip = userInput;
     if (zip != 0){
