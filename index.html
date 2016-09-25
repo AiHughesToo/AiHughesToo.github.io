@@ -22,7 +22,7 @@ function google_Complete(gResult){
  var lng = (gResult.results[0].geometry.location.lng);
  console.log(lng);
  console.log(lat);
- var city = "bob";
+  city = "bob";
  var result = {
         url: "https://api.darksky.net/forecast/4c175e0918482d7e59b0b9e748006844/" + lat + "," + lng,
         dataType: "jsonp",
