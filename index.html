@@ -24,6 +24,7 @@ function google_Complete(gResult){
 
         url: "https://api.darksky.net/forecast/4c175e0918482d7e59b0b9e748006844/" + lat + "," + lng,
         dataType: "jsonp",
+        var city = "hello",
         success: darksky_Complete
         };
 
@@ -35,6 +36,7 @@ function darksky_Complete(result) {
     console.log(result.currently.temperature);
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
+    console.log(result.city;)
 var wInfo = (result);
 
 console.log("hello 23");
