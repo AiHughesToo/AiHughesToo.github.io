@@ -53,11 +53,12 @@ $("#wCard").append(wDisplay);
 
 function genWCards(result){
 console.log(result.daily.summary);
-var day1 = result.daily.data[0].time;
-var date1 = new Date(day1 * 1000).
+var day1 = result.daily.data[0]
+var date1 = new Date(day1.time * 1000).
 var wDisplay = $("#wDisplay").html();
 wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
 wDisplay = wDisplay.replace("@@date1@@", date1);
+wDisplay = wDisplay.replace("@@hi1@@",result.daily.data[0].temperatureMax);
 console.log (date1);
 return wDisplay;
 }
