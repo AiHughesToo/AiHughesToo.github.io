@@ -40,7 +40,7 @@ function darksky_Complete(result) {
     console.log(city);
     console.log(result[1]);
 var wInfo = (result);
-    var mDisplay = genMainDisplay(result);
+    var mDisplay = genMainDisplay(result.result);
     $("#card").append(mDisplay);
    
 }
@@ -69,7 +69,7 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
     mDtemplate = mDtemplate.replace("@@city@@", city);
 var test = "2nd var info";
-return [mDtemplate];
+return [mDtemplate, test];
 
 }
 //$(function(){
