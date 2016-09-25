@@ -45,7 +45,14 @@ var wInfo = (result);
    
 };
 function dayCards (result) {
-console.log(result.daily.summary)
+console.log("I made it to dayCards");
+var wDisplay = genWCards(result);
+$("#dCard").append(wDisplay);
+
+}
+
+function genWCards(result){
+console.log(result);
 
 }
 function startItOff(userInput){
@@ -194,16 +201,17 @@ document.getElementById("time").innerHTML = d;
         </div>
         <!-- Start of cards -->
         <!--set a div to hold the daily template-->
-        <div id="weekly">
+        <div class="container" id="weekly">
+            <div class="row" id="wcard">
         
             </div>
         <!--end to dialy holder-->
         <!--day cards template-->
-<div id ="dayCard" class="row rStyle">
+        <div id="wDisplay" style="display: none;">
+<div class="row rStyle">
 <div class = "col-md-12 " style = "background: #ffffff; margin-bottom: 5px;">@@weeksum@@
     </div>
 <!--1-->
-   
     <div class="card col-md-3 col-md-offset-1 cardStyle">
 <p class="text-center">@@date1@@</p>
 <p class="text-center">@@icon1@@</p>
@@ -251,6 +259,7 @@ document.getElementById("time").innerHTML = d;
 <span>@@rain6@@ % chance for rain</span>
         </div>
  </div>   
+ </div>
         <!-- end day card template-->
 <div class="container" style="display: none">
       <div class="row rStyle">
