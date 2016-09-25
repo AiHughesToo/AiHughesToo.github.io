@@ -13,18 +13,20 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous">  </script>
+        
 <script>
+    var city ="";
 function google_Complete(gResult){
  console.log(gResult.results);
  var lat = (gResult.results[0].geometry.location.lat);
  var lng = (gResult.results[0].geometry.location.lng);
  console.log(lng);
  console.log(lat);
+ var city = "bob"
  var result = {
 
         url: "https://api.darksky.net/forecast/4c175e0918482d7e59b0b9e748006844/" + lat + "," + lng,
         dataType: "jsonp",
-        var city = "hello",
         success: darksky_Complete
         };
 
@@ -36,7 +38,7 @@ function darksky_Complete(result) {
     console.log(result.currently.temperature);
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
-    console.log(result.city;)
+    console.log(city);
 var wInfo = (result);
 
 console.log("hello 23");
