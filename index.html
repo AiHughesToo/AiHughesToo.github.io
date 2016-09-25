@@ -55,7 +55,9 @@ function genWCards(result){
 console.log(result.daily.summary);
 var wDisplay = $("#wDisplay").html();
 wDisplay = wDisplay.replace("@@weeksum@@", result.daily.summary);
-wDisplay = wDisplay.replace("@@icon1@@", result.daily.data[0].icon);
+var day1 = result.daily.data[0].time;
+var date1 = new Date(day1 * 1000).
+wDisplay = wDisplay.replace("@@date1@@", date1);
 
 return wDisplay;
 }
