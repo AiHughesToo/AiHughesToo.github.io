@@ -39,8 +39,6 @@ function darksky_Complete(result) {
     console.log(result.daily.summary);
     console.log(city);
 var wInfo = (result);
-
-console.log("hello 23");
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
    
@@ -68,6 +66,7 @@ function genMainDisplay(result){
     mDtemplate = mDtemplate.replace("@@rain@@", result.currently.precipProbability);
     mDtemplate = mDtemplate.replace("@@hi@@", result.currently.humidity);
     mDtemplate = mDtemplate.replace("@@low@@", result.currently.summary);
+    mDtemplate = mDtemplate.replace("@@city@@", city);
   
 
 return mDtemplate;
