@@ -1,0 +1,68 @@
+ <style>
+        h2 {
+            color: #ffffff;
+        }
+        
+        .display {
+            color: #dddddd;
+            font-size: 20px;
+            padding: 5px;
+        -moz-box-shadow:    inset 0 0 20px #000000;
+          -webkit-box-shadow: inset 0 0 20px #000000;
+          box-shadow:         inset 0 0 20px #000000;
+        }
+        .displayRow{
+            padding:5px;
+        }
+        
+        .tempD {
+            font-size: 100px;
+            color: #dcc504;
+        }
+    
+        .cardStyle {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            border-radius: 20px;
+            height: 250px;
+            background: #333;
+          -moz-box-shadow:    inset 0 0 20px #000000;
+          -webkit-box-shadow: inset 0 0 20px #000000;
+          box-shadow:         inset 0 0 20px #000000;
+        }
+      
+        .rStyle {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            line-height: 30px;
+        }
+        .footer {
+            height:50px;
+            color: #aaa;
+            background: #333333;
+        }
+    .logo{
+        color: #ffffff;
+        font-size: 40px;
+        margin-left: 15%;
+        margin-right: 20px;
+    }
+    .wSummary {
+        background: #000;
+        height: 30px;
+        color: #dcc504;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .welcome {
+        background: #ffffff;
+        border-radius: 50px;
+
+    }
+    .carousel-inner > .item > img {
+    margin: 0 auto;
+}
+    </style>
