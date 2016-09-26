@@ -38,7 +38,7 @@ function darksky_Complete(result) {
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
     console.log(city);
-    $("#mDhold").css({background-image: url('https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/bbground4.jpg'});
+    $("#mDhold").css({background-image: url("https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/bbground4.jpg")});
 var wInfo = (result);
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
