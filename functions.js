@@ -1,4 +1,4 @@
-<script>
+
     var city ="";
 function google_Complete(gResult){
  console.log(gResult.results);
@@ -173,4 +173,3 @@ return mDtemplate;
 
 
 
- </script>
