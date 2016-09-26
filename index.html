@@ -38,7 +38,42 @@ function darksky_Complete(result) {
     console.log(result.currently.precipProbability);
     console.log(result.daily.summary);
     console.log(city);
+   // $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+switch (result.currently.icon){
+    case "clear-day":
     $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+    case "clear-night":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+    case "rain":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+    case "snow":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+    case "sleet":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+     case "wind":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+     case "fog":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+     case "cloudy":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+     case "partly-cloudy-night":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+     case "partly-cloudy-day":
+    $("#mDhold").css({'background-image' : 'url(https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/25334-drops-845884.jpeg)'});
+    break;
+    default: 
+    $("#mDhold").css("background: #000000");
+    break;
+}
 var wInfo = (result);
     var mDisplay = genMainDisplay(result);
     $("#card").append(mDisplay);
