@@ -58,6 +58,8 @@ function weaponAttack(character, weaponName) {
        // console.log(weaponName.toUpperCase());
         if(weapon.name == weaponName) {
             maxDamage = weapon.damage;
+        } else if (weapon.name.toUpperCase() == weaponName){
+            maxDamage = weapon.damage;
         }
     }
     console.log("He hits for " + Math.round( Math.random() * maxDamage ) + " damage");
@@ -69,7 +71,7 @@ listCharacters(adventuringParty);
 listWeapons(adventuringParty.wizard);
 listWeapons(adventuringParty.warrior);
 weaponAttack(adventuringParty.warrior, adventuringParty.warrior.weapons[0].name);
-weaponAttack(adventuringParty.wizard, adventuringParty.wizard.weapons[0].name);
+weaponAttack(adventuringParty.wizard, adventuringParty.wizard.weapons[0].name.toUpperCase());
 
 /*
 EXAMPLE OUTPUT:
