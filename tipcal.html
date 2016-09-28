@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">  
+        
+        </script>
+    <script>
+    // set the global variables
+var billAmount = 0;
+var tipMult = 0;
+var numPeople = 0;
+
+// function to calculate the tip
+function calTip() {
+var tipAmount = ((+billAmount) * (+tipMult));
+console.log(tipAmount);
+tipDiv(tipAmount);
+};
+//function to divide the tip and bill
+
+function tipDiv (tipAmount){
+console.log("im at the tip amount ");
+//divi up the tip 
+if (numPeople != 0) {
+var tipDivided = tipAmount / (+numPeople);
+outPut1(tipDivided);
+} else {
+    outPut2(tipAmount);
+}
+
+};
+
+// start of adding things to the page we will format what we are expecting to see on the final page
+
+function outPut1(tipDivided){
+    console.log("Per Person")
+    var billAmountLocal = (+billAmount)/(+numPeople);
+    var total = billAmountLocal + tipDivided;
+console.log("Tip Amount: $" + tipDivided); 
+console.log("Total bill amount including tip $" + total);
+  
+};
+
+function outPut2(tipAmount){
+
+console.log("Your Tip Amount is $" + (+tipAmount));
+var total = (+billAmount) + tipAmount;
+console.log("Your Total Bill Including TiP $" + total);
+};
+// function to start it off
+// this will be on a click event fo the calculate button
+function  start(){
+billAmount = $("#billAmount").val();
+//tipMult = $("#tipMult").val();
+numPeople = $("#numPeople").val();
+calTip();
+};
+
+// listen for the button click
+$(function(){
+$("#calculate").on("click", start);
+$("#5").on("click", function(){ tipMult = .05; console.log(tipMult);});
+$("#10").on("click", function(){ tipMult = .1; console.log(tipMult);});
+$("#15").on("click", function(){ tipMult = .15; console.log(tipMult);});
+$("#20").on("click", function(){ tipMult = .2; console.log(tipMult);});
+$(".dropdown-menu li a").click(function(){
+  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+});
+
+});
+//function to send to the page
+
+</script>
+
+</head>
+
+
+<body>
+    <input type="number" id="billAmount" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="Bill Amount">
+    <div class="input-group-btn">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+           Select Service Quality <span class="caret"></span>
+        </button>
+        <ul id="demolist" class="dropdown-menu">
+            <li id="5"><a href="#">5%</a></li>
+            <li id="10"><a href="#">10%</a></li>
+            <li id="15"><a href="#">15%</a></li>
+            <li id="20"><a href="#">20%</a></li>
+        </ul>
+    </div>
+
+    <input type="number" id="numPeople" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="People Spliting the Bill">
+    <button type="button" id="calculate" class="btn btn-default" style="margin-right: 1%; margin-bottom: 5px; height: 50px;">Calculate</button>
+
+</body>
+
+</html>
