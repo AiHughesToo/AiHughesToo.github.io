@@ -151,7 +151,7 @@ function startItOff(userInput){
 };
 
 function genMainDisplay(result){
-    console.log("I made it to the genMainDisplay");
+    
     var mDtemplate = $("#mainDisplay").html();
     mDtemplate = mDtemplate.replace("@@Temp@@", result.currently.temperature);
     mDtemplate = mDtemplate.replace("@@rain@@", result.currently.precipProbability);
@@ -162,14 +162,7 @@ function genMainDisplay(result){
 return mDtemplate;
 
 }
-//$(function(){
-  //var gResult = {
-    //    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
-    //    dataType: "json",
-      //  success: google_Complete
-  //  };
-   // $.ajax(gResult);
-//});
+
 
 
 

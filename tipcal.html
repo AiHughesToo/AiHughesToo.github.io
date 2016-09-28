@@ -15,7 +15,9 @@
         crossorigin="anonymous">  
         
         </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
+       
     // set the global variables
 var billAmount = 0;
 var tipMult = 0;
@@ -49,6 +51,11 @@ function outPut1(tipDivided){
     var total = billAmountLocal + tipDivided;
 console.log("Tip Amount: $" + tipDivided); 
 console.log("Total bill amount including tip $" + total);
+var templateFin = $("#template").html();
+templateFin = templateFin.replace("@@title@@", "For Each Person")
+templateFin = templateFin.replace("@@tipA@@", tipDivided.toFixed(2))
+templateFin = templateFin.replace("@@totalA@@", total.toFixed(2));
+$("#display").html(templateFin);
   
 };
 
@@ -57,7 +64,16 @@ function outPut2(tipAmount){
 console.log("Your Tip Amount is $" + (+tipAmount));
 var total = (+billAmount) + tipAmount;
 console.log("Your Total Bill Including TiP $" + total);
+var templateFin = $("#template").html();
+templateFin = templateFin.replace("@@title@@", "Your Totals")
+templateFin = templateFin.replace("@@tipA@@", tipAmount.toFixed(2))
+templateFin = templateFin.replace("@@totalA@@", total.toFixed(2));
+$("#display").html(templateFin);
+
 };
+
+
+
 // function to start it off
 // this will be on a click event fo the calculate button
 function  start(){
@@ -67,9 +83,19 @@ numPeople = $("#numPeople").val();
 calTip();
 };
 
+
+
 // listen for the button click
 $(function(){
 $("#calculate").on("click", start);
+ $(".billInput").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
 $("#5").on("click", function(){ tipMult = .05; console.log(tipMult);});
 $("#10").on("click", function(){ tipMult = .1; console.log(tipMult);});
 $("#15").on("click", function(){ tipMult = .15; console.log(tipMult);});
@@ -82,26 +108,63 @@ $(".dropdown-menu li a").click(function(){
 //function to send to the page
 
 </script>
-
+    <style>
+        #mainWindow {
+            margin: auto;
+            background: #cccccc;
+            background-image: url('http://i568.photobucket.com/albums/ss129/acsapple/paper_1024.jpg');
+            padding: 10%;
+            border-radius: 50px;
+            width: 90%;
+        }
+    </style>
 </head>
 
 
-<body>
-    <input type="number" id="billAmount" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="Bill Amount">
-    <div class="input-group-btn">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+<body style="background: #234234; background-image: url('http://www.hotelauszeit.ch/de/photos/crop__163795_t1__1680.jpg'); padding-top: 20px;">
+
+    <div id="mainWindow">
+        <h1 class="text-center">Tip Calculator</h1>
+
+        <input type="text" id="billAmount" maxLength="6" class="billInput" style="margin:0 auto; margin-bottom: 10px; display: block; line-height: 50px; font-size: 25px;"
+            placeholder="Bill Amount" max = "999">
+        <div class="input-group-btn" style="margin-left: 20%;">
+            <button type="button" class="btn btn-primary dropdown-toggle" style="margin:0 auto; display: block; margin-bottom: 10px;"
+                data-toggle="dropdown">
            Select Service Quality <span class="caret"></span>
         </button>
-        <ul id="demolist" class="dropdown-menu">
-            <li id="5"><a href="#">5%</a></li>
-            <li id="10"><a href="#">10%</a></li>
-            <li id="15"><a href="#">15%</a></li>
-            <li id="20"><a href="#">20%</a></li>
-        </ul>
+            <ul id="demolist" class="dropdown-menu" Style="margin-left: 20%; margin-bottom: 10px;">
+                <li id="5"><a href="#">5% Poor Service</a></li>
+                <li id="10"><a href="#">10% Fair Service</a></li>
+                <li id="15"><a href="#">15% Good Service</a></li>
+                <li id="20"><a href="#">20% Excelent Service</a></li>
+            </ul>
+        </div>
+
+        <input type="number" id="numPeople" style="margin:0 auto; display: block; line-height: 50px; font-size: 25px;" placeholder="People Spliting the Bill"><br/>
+        <button type="button" id="calculate" class="btn btn-success" style="margin:0 auto; display: block; height: 50px;">Calculate Tip</button>
+        <!--hold the result-->
+        <div id="display" Style="margin:0 auto; display: block;"> </div>
+        <input type="button" value="Reset" class="btn btn-default" onClick="window.location.reload()">
     </div>
 
-    <input type="number" id="numPeople" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="People Spliting the Bill">
-    <button type="button" id="calculate" class="btn btn-default" style="margin-right: 1%; margin-bottom: 5px; height: 50px;">Calculate</button>
+    <!-- template for calcualtor-->
+    <div class="container" id="template" style="display: none;">
+        <div class="row">
+            <div id="headding">
+                <h2 class="text-center">@@title@@</h2>
+
+            </div>
+
+            <div id="tipA">
+                <h2 class="text-center">Tip Amount $ @@tipA@@</h2>
+
+            </div>
+            <div id="totalA">
+                <h2 class="text-center"> Total Bill Including Tip $ @@totalA@@</h2>
+
+            </div>
+        </div>
 
 </body>
 
