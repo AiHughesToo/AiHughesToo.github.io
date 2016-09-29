@@ -1,0 +1,223 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">  
+        
+        </script>
+        <script src="/functions.js"></script>
+ <link rel ="stylesheet" type="text/css" href="/style.css">        
+
+  
+    <!--how to link to a css file-->
+   
+</head>
+
+<body style="background: #234234; background-image: url('https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/bbground4.jpg');">
+    <!--nav bar goes here with the title and the dropdown menu-->
+<!-- facebook share button -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--end facebook-->
+
+   <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="row">
+             <div class="col-md-4 col-sm-4 col-xs-4">   <span class="logo">Weatherly</span></div>
+              <div class="col-md-4 col-md-offset-3"><input type="text" name="userInput" id="uI" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="Address or Zip">
+<button type="button" onclick = "startItOff(document.getElementById('uI').value)" class="btn btn-default"  style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
+    <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>
+  </button>
+  </div>
+  
+</div>
+</div>
+        </nav>
+        <!--end nav bar -->
+        <div id="welcome" class="container welcome text-center">
+            <h3>Welcome to Weatherly Web App.<br /> Please enter a city name, postal code, or three letter airport identifier above.</h3>
+            </div>
+        <!--start of display of main day  -->
+          <div id="mDhold" class="container display" class="display" style="border-radius: 300px;"> 
+    <div class="row" id="card">
+        </div>
+    </div>
+          <!-- start of template for main display-->
+     <div id ="mainDisplay" class="display" style="display: none;">
+
+             <div class="row displayRow">
+              <div class="col-md-4 col-xs-6 col-xs-offset-2">@@city@@</div>
+                <div class="col-md-6 col-md-offset-2 col-xs-6 col-xs-offset-2">Chance For Rain:@@rain@@%</div>
+                <div class="col-md-12 text-center tempD">@@Temp@@</div>
+                <div class="col-md-4 col-md-offset-2 col-xs-2 col-xs-offset-3">Humidity: @@hi@@</div>
+                <div class="col-md-4 col-xs-2 col-xs-offset-2">@@low@@</div>
+            
+            </div>
+        </div>
+
+<!-- end of main display template-->
+
+        <div class="container-fluid" style="margin: 5px;">
+      
+
+        <!-- time goes here -->
+
+        <div class="col-md-12 text-right" style="background: #333; color: #eee;"><span id="time"></span>
+        <script>
+var d = new Date ();
+document.getElementById("time").innerHTML = d;
+    
+            </script>
+        </div>
+        </div>
+        <!-- Start of cards -->
+        <!--set a div to hold the daily template-->
+        <div class="container" id="weekly">
+            <div class="row" id="wCard">
+        
+            </div>
+      </div>
+        <!--end to dialy holder-->
+        <!--day cards template-->
+        <div id="wDisplay" style="display: none;">
+            <div class="col-md-10 text-left"> <h2>Week at a Glance</h2></div>
+<div class="row rStyle">
+<div class = "col-md-12 wSummary text-center">@@weeksum@@
+    </div>
+<!--1-->
+    <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date1@@</h2>
+<span style="margin-right:2%">Hi: @@hi1@@</span> <span style="margin-left: 10%">Low: @@low1@@</span> <span style="margin-left:6%">@@rain1@@ % chance for rain</span><br />
+<p class="text-center">@@sum1@@</p><br/>
+        </div>
+        <!--2-->
+       <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date2@@</h2>
+<span style="margin-right:2%">Hi: @@hi2@@</span> <span style="margin-left: 10%">Low: @@low2@@</span> <span style="margin-left:6%">@@rain2@@ % chance for rain</span><br />
+<span class="text-center">@@sum2@@</span><br/>
+        </div>
+        <!--3-->
+          <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date3@@</h2>
+<span style="margin-right:2%">Hi: @@hi3@@</span> <span style="margin-left: 10%">Low: @@low3@@</span> <span style="margin-left:6%">@@rain3@@ % chance for rain</span><br />
+<span class="text-center">@@sum3@@</span><br/>
+        </div>
+        <!--4-->
+            <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date4@@</h2>
+<span style="margin-right:2%">Hi: @@hi4@@</span> <span style="margin-left: 10%">Low: @@low4@@</span> <span style="margin-left:6%">@@rain4@@ % chance for rain</span><br />
+<span class="text-center">@@sum4@@</span><br/>
+        </div>
+        <!--5-->
+          <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date5@@</h2>
+<span style="margin-right:2%">Hi: @@hi5@@</span> <span style="margin-left: 10%">Low: @@low5@@</span> <span style="margin-left:6%">@@rain5@@ % chance for rain</span><br />
+<span class="text-center">@@sum5@@</span><br/>
+        </div>
+       
+        <!--6-->  
+           <div class="card col-md-3 col-md-offset-1 cardStyle">
+<h2 class="text-center" style="color: #00a2ff">@@date6@@</h2>
+<span style="margin-right:2%">Hi: @@hi6@@</span> <span style="margin-left: 10%">Low: @@low6@@</span> <span style="margin-left:6%">@@rain6@@ % chance for rain</span><br />
+<span class="text-center">@@sum6@@</span><br/>
+        </div>
+        </div>
+ </div>   
+ 
+        <!-- end day card template-->
+<div class="container" style="display: none">
+      <div class="row rStyle">
+<!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/1174054-bigthumbnail.jpg">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                <!-- card -->
+                <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('https://github.com/AiHughesToo/AiHughesToo.github.io/blob/master/weather/1.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+                     <!--start Card-->
+                <div class="card col-md-3 col-md-offset-1 cardStyle" style="background-image: url('https://github.com/AiHughesToo/AiHughesToo.github.io/blob/master/weather/1.jpg');">
+                    
+                    <div class="card-img-overlay">
+                        <h3 class="card-title text-center">City Name</h3>
+                        <h1 class="card-title text-center">72</h1>
+                        <span>Hi:</span>
+                        <span>Low:</span><br />
+                        <br />
+                        <br />
+                        <span>Chance for Rain:</span>
+                    </div>
+                    <!-- card img overlay -->
+                </div>
+         
+         
+          </div> <!--row-->
+    
+
+    </div>
+      <!--second row of images-->
+      <div class="container-fluid">
+   <div id="slider" class="carousel slide" style="background:#" data-ride="carousel">
+       <div class="carousel-inner" role="listbox">
+           <div class="item active"> <!--only one can be active or they will all display on the screen-->
+               <img src="https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/a1.png"alt="words">
+           
+           </div>
+        <div class="item">
+               <img src="https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/a2.png"alt="words">
+           
+           </div>
+             <div class="item">
+               <img src="https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/a3.png"alt="words">
+           
+           </div>
+        
+       </div>
+           </div>
+           </div>
+<div class="fb-share-button" data-href="https://aihughestoo.github.io/" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faihughestoo.github.io%2F&amp;src=sdkpreparse">Share</a></div>
+        <div class="footer text-center">
+<span>Weather information provided by the Darksky project.</span>
+            </div>
+</body>
+
+
+
+
+</html>
