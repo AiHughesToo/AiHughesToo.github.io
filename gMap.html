@@ -46,8 +46,7 @@ function google_Complete(gResult){
  lng2 = (gResult.results[0].geometry.location.lng);
  console.log(lng2);
  console.log(lat1);
- initMap();
- //initMap(gResult);
+  initMap(gResult);
 };
 // Function to take city or zip
 function startItOff(userInput){
