@@ -17,9 +17,58 @@
 
 
         </head>
+
+
+         <script>
+
+        var lat1 = -25.363;
+        var lng2 = 131.044;
+// function to get the map
+
+function initMap() {
+        var place = {lat: lat1, lng: lng2};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: place
+        });
+        var marker = new google.maps.Marker({
+          position: place,
+          map: map
+        });
+      }
+
+// function to turn city zip into lat & lng
+function google_Complete(gResult){
+ console.log(gResult.results);
+ lat1 = (gResult.results[0].geometry.location.lat);
+ lng2 = (gResult.results[0].geometry.location.lng);
+ console.log(lng2);
+ console.log(lat1);
+ initMap(gResult);
+};
+// Function to take city or zip
+function startItOff(userInput){
+ var zip = userInput;
+    if (zip != 0){
+  var gResult = {
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
+        dataType: "json",
+        success: google_Complete
+    };
+    $.ajax(gResult);
+    
+    } else {
+        alert("I need a zip code or city and state to find the weather.");
+    }
+};
+</script>
 <style>
 
+#map {
+background: #333;
+height: 250px;
 
+}
     </style>
 
         <body>
@@ -32,13 +81,15 @@
   </button>
 
 <!--placeholder for map div-->
-<div id="">
+<div id="map">
 
 </div>
 
 </div>
 
-
+ <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfdcWMJL-YdHdyQYAsdXCVGCJANFtwBzA&callback=initMap">
+    </script>
             </body>
 
             </html>
