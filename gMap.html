@@ -40,7 +40,22 @@ var place = {lat: lat1, lng: lng2};
  
 
       }
+function card(){
+    $("#mapList").prepend(function initMap() {
+var place = {lat: lat1, lng: lng2};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: place
+        });
+        var marker = new google.maps.Marker({
+          position: place,
+          animation:google.maps.Animation.BOUNCE,
+          map: map
+        });
+ 
 
+      });
+}
 // function to turn city zip into lat & lng
 function google_Complete(gResult){
  console.log(gResult.results);
@@ -50,7 +65,7 @@ function google_Complete(gResult){
  console.log(lng2);
  console.log(lat1);
  console.log(city);
- initMap();
+ card();
 };
 // Function to take city or zip
 function startItOff(userInput){
@@ -86,6 +101,11 @@ background: #333;
 height: 250px;
 
 }
+#mapList{
+    background: #333;
+    margin: 5px;
+    border: 20px;
+}
     </style>
 
         <body style="background-image: url('http://www.pptbackgrounds.org/uploads/crystal-abstract-world-map-powerpoint-backgrounds.jpg');">
@@ -108,6 +128,7 @@ height: 250px;
 
 </div>
 <div id="mapList">
+    
     </div>
 <div>
 <input type="button" value="Reset" class="btn btn-default" onClick="window.location.reload()">
