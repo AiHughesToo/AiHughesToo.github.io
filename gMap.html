@@ -36,10 +36,6 @@ function initMap() {
           map: map
         });
       }
-function genMap(gresult){
-var dMap = initMap(map);
-$("#map2").append(dMap);
-
 
 }
 // function to turn city zip into lat & lng
@@ -49,7 +45,7 @@ function google_Complete(gResult){
  lng2 = (gResult.results[0].geometry.location.lng);
  console.log(lng2);
  console.log(lat1);
-  genMap(gResult);
+ initMap(gResult);
 };
 // Function to take city or zip
 function startItOff(userInput){
@@ -71,7 +67,7 @@ function startItOff(userInput){
 $(function(){
 $("#map").hide();
 
-
+$("#map2").hide();
 });
 </script>
 <style>
