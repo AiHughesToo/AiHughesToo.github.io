@@ -30,13 +30,14 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: place
+           $("#mapList").append(map);
         });
         var marker = new google.maps.Marker({
           position: place,
           map: map
         });
 
-        $("#mapList").append(map);
+       
 
       }
 
