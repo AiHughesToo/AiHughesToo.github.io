@@ -34,6 +34,7 @@ var place = {lat: lat1, lng: lng2};
         });
         var marker = new google.maps.Marker({
           position: place,
+          animation:google.maps.Animation.BOUNCE,
           map: map
         });
  
@@ -49,7 +50,7 @@ function google_Complete(gResult){
  console.log(lng2);
  console.log(lat1);
  console.log(city);
- initMap(gResult);
+ initMap();
 };
 // Function to take city or zip
 function startItOff(userInput){
