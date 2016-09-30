@@ -38,11 +38,6 @@ function initMap() {
       }
 
 
-      //fiunction to append to page
-function showMap(){
-      var mDisplay = initMap();
-      //$("#map2").append(mDisplay);
-
 };
 // function to turn city zip into lat & lng
 function google_Complete(gResult){
@@ -51,7 +46,7 @@ function google_Complete(gResult){
  lng2 = (gResult.results[0].geometry.location.lng);
  console.log(lng2);
  console.log(lat1);
- showMap();
+ initMap();
  //initMap(gResult);
 };
 // Function to take city or zip
@@ -96,8 +91,8 @@ height: 250px;
 <div class="container">
 <!-- input and button -->
 <div class="title">
-    <h1>Google Map Information:</h1>
-<span>Please enter a city, state or postal code to access a location map.</span>
+    <h1 style="color:#fff;">Google Map Information:</h1>
+<span style="color:#fff;">Please enter a city, state or postal code to access a location map.</span>
 
 
 
