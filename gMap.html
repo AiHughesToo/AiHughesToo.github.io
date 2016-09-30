@@ -36,7 +36,7 @@ function initMap() {
           map: map
         });
       }
-function genMap(map){
+function genMap(gresult){
 var dMap = initMap(map);
 $("#map2").append(dMap);
 
@@ -49,7 +49,7 @@ function google_Complete(gResult){
  lng2 = (gResult.results[0].geometry.location.lng);
  console.log(lng2);
  console.log(lat1);
-  initMap(gResult);
+  genMap(gResult);
 };
 // Function to take city or zip
 function startItOff(userInput){
