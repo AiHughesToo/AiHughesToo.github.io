@@ -36,7 +36,12 @@ function initMap() {
           map: map
         });
       }
+function genMap(map){
+var dMap = initMap(map);
 
+
+
+}
 // function to turn city zip into lat & lng
 function google_Complete(gResult){
  console.log(gResult.results);
@@ -104,6 +109,9 @@ height: 250px;
 <div id="map">
 
 </div>
+<div id="map2">
+
+    </div>
 <div>
 <input type="button" value="Reset" class="btn btn-default" onClick="window.location.reload()">
 </div>
