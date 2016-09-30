@@ -23,6 +23,7 @@
 
         var lat1 = -25.363;
         var lng2 = 131.044;
+        var city ="";
 // function to get the map
 
 function initMap() {
@@ -44,8 +45,10 @@ function google_Complete(gResult){
  console.log(gResult.results);
  lat1 = (gResult.results[0].geometry.location.lat);
  lng2 = (gResult.results[0].geometry.location.lng);
+ city = (gResult.results[0].formatted_address);
  console.log(lng2);
  console.log(lat1);
+ console.log(city);
  initMap(gResult);
 };
 // Function to take city or zip
@@ -73,6 +76,11 @@ $("#map").hide();
 <style>
 
 #map {
+background: #333;
+height: 250px;
+
+}
+#map2 {
 background: #333;
 height: 250px;
 
