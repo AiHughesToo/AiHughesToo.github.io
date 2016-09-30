@@ -41,8 +41,8 @@ function listCharacters() {
 function listWeapons(character) {
     console.log("Listing weapons for " + character.name + ":");
     for(i in character.weapons) {
-        var weapon = character.weapons[i];
-        console.log(" * " . weapon[name]);
+        var weapon = character.weapons[i].name;
+        console.log(" * " + weapon);
     }
 }
 
@@ -50,10 +50,15 @@ function listWeapons(character) {
 // It uses the weapon damage from the object to determine the maximum damage of this weapon
 function weaponAttack(character, weaponName) {
     console.log(character.name + " attacks with his " + weaponName);
+   // console.log(character.weapons);
     var maxDamage;
     for(i in character.weapons) {
         var weapon = character.weapons[i];
-        if(weapon.name == weaponName.toUpperCase()) {
+       // console.log(weapon.name);
+       // console.log(weaponName.toUpperCase());
+        if(weapon.name == weaponName) {
+            maxDamage = weapon.damage;
+        } else if (weapon.name.toUpperCase() == weaponName){
             maxDamage = weapon.damage;
         }
     }
@@ -63,10 +68,10 @@ function weaponAttack(character, weaponName) {
 // Run the functions
 console.log("hi");
 listCharacters(adventuringParty);
-listWeapons("wizard");
-//listWeapons(warrior);
-//weaponAttack("Warrior", "axe");
-//weaponAttack("Wizard", "STAFF");
+listWeapons(adventuringParty.wizard);
+listWeapons(adventuringParty.warrior);
+weaponAttack(adventuringParty.warrior, adventuringParty.warrior.weapons[0].name);
+weaponAttack(adventuringParty.wizard, adventuringParty.wizard.weapons[0].name.toUpperCase());
 
 /*
 EXAMPLE OUTPUT:
