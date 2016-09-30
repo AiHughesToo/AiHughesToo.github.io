@@ -28,7 +28,7 @@
 function initMap() {
         var place = {lat: lat1, lng: lng2};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
+          zoom: 12,
           center: place
         });
         var marker = new google.maps.Marker({
@@ -37,6 +37,13 @@ function initMap() {
         });
       }
 
+
+      //fiunction to append to page
+function showMap(){
+      var mDisplay = initMap();
+      //$("#map2").append(mDisplay);
+
+};
 // function to turn city zip into lat & lng
 function google_Complete(gResult){
  console.log(gResult.results);
@@ -44,12 +51,15 @@ function google_Complete(gResult){
  lng2 = (gResult.results[0].geometry.location.lng);
  console.log(lng2);
  console.log(lat1);
- initMap(gResult);
+ showMap();
+ //initMap(gResult);
 };
 // Function to take city or zip
 function startItOff(userInput){
+
  var zip = userInput;
     if (zip != 0){
+        $("#map").show();
   var gResult = {
         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "&key=AIzaSyDo5sAWg49d2_TnmNXSLWcH4FyurjforJg",
         dataType: "json",
@@ -61,10 +71,20 @@ function startItOff(userInput){
         alert("I need a zip code or city and state to find the weather.");
     }
 };
+$(function(){
+$("#map").hide();
+
+
+});
 </script>
 <style>
 
 #map {
+background: #333;
+height: 250px;
+
+}
+#map2 {
 background: #333;
 height: 250px;
 
@@ -75,6 +95,14 @@ height: 250px;
 
 <div class="container">
 <!-- input and button -->
+<div class="title">
+    <h1>Google Map Information:</h1>
+<span>Please enter a city, state or postal code to access a location map.</span>
+
+
+
+</div>
+
 <input type="text" name="userInput" id="uI" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="Address or Zip">
         <button type="button" onclick="startItOff(document.getElementById('uI').value)" class="btn btn-default" style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
     <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>
@@ -84,7 +112,9 @@ height: 250px;
 <div id="map">
 
 </div>
-
+<div>
+<input type="button" value="Reset" class="btn btn-default" onClick="window.location.reload()">
+</div>
 </div>
 
  <script async defer
