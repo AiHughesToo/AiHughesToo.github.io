@@ -25,6 +25,7 @@ var CguessA=0;
 var CguessB=0;
 var cguessC=0;
 var countN = 10;
+var loseAudio = new Audio('https://raw.githubusercontent.com/AiHughesToo/AiHughesToo.github.io/master/weather/speech.mp3');
 //test if two numbers the same 
 function numberTest(){
 
@@ -117,6 +118,7 @@ function theCount(){
     console.log("i am here" + countN);
     countN = countN -1;
     if (countN == 0){
+        loseAudio.play();
         $("#count").html("You have lost the game and you kind of suck. You smell funny and some of the other students are starting to talk. But I'm just a computer so what do I know?");
         console.log("you have lost the game");
     } else {
