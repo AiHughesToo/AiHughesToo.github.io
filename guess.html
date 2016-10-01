@@ -112,8 +112,16 @@ if (guessCG == CguessA){
 }
 
 };
-//
+//the count
+function count(){
+    count = count -1;
+    if (count == 0){
+        console.log("you have lost the game");
+    } else {
 
+        $("#count").html("You have " + count + " left")
+    }
+}
 //
 
 
@@ -162,6 +170,9 @@ height: 300px;
 <button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
     <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>GUESS
   </button>
+  <div id="count">
+      <span>You have 10 guesses left</span>
+      </div>
   </div>
   </div>
             </body>
