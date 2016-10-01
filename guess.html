@@ -124,9 +124,13 @@ function theCount(){
         $("#count").html("You have " + countN + " left")
     }
 };
+//did we win?
+if (guessGA == CguessA && guessGB == CguessB && guessGC == CguessC){
+
+    $("#count").html("You Win!");
+}
+
 //
-
-
 $(function(){
 CguessA = Math.floor(Math.random() * 9) + 0;
 CguessB = Math.floor(Math.random() * 9) + 0;
