@@ -123,12 +123,14 @@ function theCount(){
 
         $("#count").html("You have " + countN + " left")
     }
+    winCheck();
 };
 //did we win?
-if (guessGA == CguessA && guessGB == CguessB && guessGC == CguessC){
+function winCheck(){if (guessGA == CguessA && guessGB == CguessB && guessGC == CguessC){
 
     $("#count").html("You Win!");
 }
+};
 
 //
 $(function(){
