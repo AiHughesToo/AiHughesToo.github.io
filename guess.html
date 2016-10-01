@@ -24,7 +24,7 @@ var guessCG=0;
 var CguessA=0;
 var CguessB=0;
 var cguessC=0;
-var count = 10;
+var countN = 10;
 //test if two numbers the same 
 function numberTest(){
 
@@ -110,17 +110,17 @@ if (guessCG == CguessA){
     console.log("redC")
     $("#col3").css("background", "#f00");
 }
-count();
+theCount();
 };
 //the count
-function count(){
-    console.log("i am here" + count);
-    count = count -1;
-    if (count == 0){
+function theCount(){
+    console.log("i am here" + countN);
+    countN = countN -1;
+    if (countN == 0){
         console.log("you have lost the game");
     } else {
 
-        $("#count").html("You have " + count + " left")
+        $("#count").html("You have " + countN + " left")
     }
 };
 //
