@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">  
+        
+        </script>
+<script>
+//logic for guessing game
+
+var guessAG=0;
+var guessBG=0;
+var guessCG=0;
+var CguessA=0;
+var CguessB=0;
+var cguessC=0;
+
+//test if two numbers the same 
+function numberTest(){
+
+if (CguessA == CguessB){
+    CguessB = CguessB +1;
+    console.log(CguessA);
+console.log(CguessB);
+console.log(CguessC);
+} else if (CguessA == CguessC){
+    CguessC = CguessC + 1;
+    console.log(CguessA);
+console.log(CguessB);
+console.log(CguessC);
+} else if (CguessB == CguessC){
+    CguessC = CguessC + 1;
+    console.log(CguessA);
+console.log(CguessB);
+console.log(CguessC);
+} else {
+console.log(CguessA);
+console.log(CguessB);
+console.log(CguessC);
+}
+
+};
+
+//set global guess values
+function start (guessA, guessB, guessC){
+guessAG = guessA;
+guessBG = guessB;
+guessCG = guessC;
+testCol1();
+
+};
+//test for colum 1
+function testCol1(){
+if (guessAG == CguessA){
+    console.log("greenA");
+    $("#col1").css("background", "#0f0");
+   
+} else if (guessAG == CguessB){
+    console.log("yellowA");
+$("#col1").css("background", "#ffea00");
+} else if (guessAG == CguessC){
+    console.log("yellowA");
+  $("#col1").css("background", "#ffea00");
+} else {
+    console.log("redA");
+  $("#col1").css("background", "#f00");
+}
+testCol2();
+};
+//
+function testCol2(){
+if (guessBG == CguessA){
+    console.log("yellowB");
+  
+} else if (guessBG == CguessB){
+    console.log("greenB");
+  
+} else if (guessBG == CguessC){
+    console.log("yellowB");
+  
+} else {
+    console.log("redB")
+}
+testCol3();
+};
+//
+function testCol3(){
+if (guessCG == CguessA){
+    console.log("yellowC");
+} else if (guessCG == CguessB){
+    console.log("yellowC");
+} else if (guessCG == CguessC){
+    console.log("greenC");
+} else {
+    console.log("redC")
+}
+
+};
+//
+
+//
+
+
+$(function(){
+CguessA = Math.floor(Math.random() * 9) + 1;
+CguessB = Math.floor(Math.random() * 9) + 1;
+CguessC = Math.floor(Math.random() * 9) + 1;
+numberTest();
+
+});
+    </script>
+    <style>
+#col1 {
+background: #000;
+height: 300px;
+
+}
+        </style>
+        </head>
+
+        <body>
+<div id ="col1" class = "col-md-3 col-md-offset-1">
+    </div>
+    <div id ="col2" class = "col-md-3 col-md-offset-1">
+    </div>
+    <div id ="col3" class = "col-md-3 col-md-offset-1">
+    </div>
+<input type="number"  id="guessA" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
+
+<input type="number" id="guessB" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
+<input type="number"  id="guessC" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
+<button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
+    <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>GUESS
+  </button>
+            </body>
+            </html>
