@@ -81,15 +81,17 @@ testCol2();
 function testCol2(){
 if (guessBG == CguessA){
     console.log("yellowB");
-  
+  $("#col2").css("background", "#ffea00");
 } else if (guessBG == CguessB){
     console.log("greenB");
-  
+  $("#col2").css("background", "#0f0");
 } else if (guessBG == CguessC){
     console.log("yellowB");
+    $("#col2").css("background", "#ffea00");
   
 } else {
-    console.log("redB")
+    console.log("redB");
+    $("#col2").css("background", "#f00");
 }
 testCol3();
 };
@@ -97,12 +99,16 @@ testCol3();
 function testCol3(){
 if (guessCG == CguessA){
     console.log("yellowC");
+    $("#col3").css("background", "#ffea00");
 } else if (guessCG == CguessB){
     console.log("yellowC");
+    $("#col3").css("background", "#ffea00");
 } else if (guessCG == CguessC){
     console.log("greenC");
+    $("#col3").css("background", "#0f0");
 } else {
     console.log("redC")
+    $("#col3").css("background", "#f00");
 }
 
 };
