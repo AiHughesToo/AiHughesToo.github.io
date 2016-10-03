@@ -162,21 +162,24 @@ height: 300px;
         </style>
         </head>
 
-        <body>
+        <body  style="background: #fff; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Enigma_Machine_-_Flickr_-_The_Central_Intelligence_Agency_(2).jpg');">
             <div class="container">
+                <div>
+instructions
+                    </div>
                 <div class ="row">
 <div id ="col1" class = "col-md-3 col-md-offset-1">
+    <input type="number"  id="guessA" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
     </div>
     <div id ="col2" class = "col-md-3 col-md-offset-1">
+        <input type="number" id="guessB" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
     </div>
     <div id ="col3" class = "col-md-3 col-md-offset-1">
+        <input type="number"  id="guessC" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
     </div>
 </div>
 <div class ="row">
-<input type="number"  id="guessA" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
 
-<input type="number" id="guessB" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
-<input type="number"  id="guessC" style="margin-left: 10px; line-height: 50px; font-size: 25px;" placeholder="guess">
 <button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
     <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>GUESS
   </button>
