@@ -160,32 +160,50 @@ background: #000;
 height: 150px;
 border-radius: 50px;
 }
+.text1 {
+color: #fff;
+size: 20px;
+}
+
+#count{
+    background: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#ins{
+    background: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 7%;
+    padding: 5px;
+}
         </style>
         </head>
 
         <body  style="background: #fff; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Enigma_Machine_-_Flickr_-_The_Central_Intelligence_Agency_(2).jpg');">
             <div class="container">
-                <div>
-instructions
+                <div id="ins">
+The Computer has chosen 3 numbers, each between 0 and 9. In the boxes below enter a number to guess the correct combination. If your guess is wrong the box will light up red. If your guess is correct the box will light up green. If you guess a correct number of the sequence but have it entered into the wrong box, that box will light up yellow. You have 10 attempts to guess the correct combination if you fail you will be insulted, verbally.
                     </div>
                 <div class ="row">
 <div id ="col1" class = "col-md-3 col-md-offset-1">
-    <input type="number"  id="guessA" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
+    <input type="number"  id="guessA" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
     </div>
     <div id ="col2" class = "col-md-3 col-md-offset-1">
-        <input type="number" id="guessB" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
+        <input type="number" id="guessB" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
     </div>
     <div id ="col3" class = "col-md-3 col-md-offset-1">
-        <input type="number"  id="guessC" style="margin: auto; margin-top: 20%; line-height: 50px; font-size: 20px;" max = "9" placeholder="guess">
+        <input type="number"  id="guessC" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
     </div>
 </div>
 <div class ="row">
-
-<button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-right: 1%; margin-bottom: 5px; height: 50px;">
-    <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>GUESS
+<div class="col-md-1 col-md-offset-5">
+<button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-top: 5px; margin-left: 45px; border-radius: 100px; height: 50px;">
+    <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>MAKE GUESS
   </button>
-  <div id="count">
-      <span>You have 10 guesses left</span>
+  </div>
+  <div id="count" class="col-md-12">
+      <span class=>You have 10 guesses left</span>
       </div>
   </div>
   </div>
