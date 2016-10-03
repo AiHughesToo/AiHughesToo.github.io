@@ -15,7 +15,7 @@
         crossorigin="anonymous">  
         
         </script>
-<script>
+    <script>
 //logic for guessing game
 
 var guessAG=0;
@@ -125,7 +125,7 @@ function theCount(){
     if (countN == 0){
         loseAudio.play();
         $("#count").html("You have lost the game and you kind of suck. You smell funny and some of the students are starting to talk. But I'm just a computer so what do I know?");
-        console.log("you have lost the game");
+       $("#reset").show();
     } else {
 
         $("#count").html("You have " + countN + " left")
@@ -136,11 +136,13 @@ function theCount(){
 function winCheck(){if (guessAG == CguessA && guessBG == CguessB && guessCG == CguessC){
 
     $("#count").html("You Win!");
+    $("#reset").show();
 }
 };
 
 //
 $(function(){
+    $("#reset").hide();
 CguessA = Math.floor(Math.random() * 9) + 0;
 CguessB = Math.floor(Math.random() * 9) + 0;
 CguessC = Math.floor(Math.random() * 9) + 0;
@@ -149,68 +151,82 @@ numberTest();
 });
     </script>
     <style>
-#col1 {
-background: #000;
-height: 150px;
-border-radius: 50px;
-}
-#col2 {
-background: #000;
-height: 150px;
-border-radius: 50px;
+        #col1 {
+            background: #000;
+            height: 150px;
+            border-radius: 50px;
+        }
+        
+        #col2 {
+            background: #000;
+            height: 150px;
+            border-radius: 50px;
+        }
+        
+        #col3 {
+            background: #000;
+            height: 150px;
+            border-radius: 50px;
+        }
+        
+        .text1 {
+            color: #fff;
+            size: 20px;
+        }
+        
+        #count {
+            background: #fff;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        
+        #ins {
+            background: #fff;
+            border-radius: 10px;
+            font-size: 20px;
+            margin: 7%;
+            padding: 5px;
+        }
+    </style>
+</head>
 
-}
-#col3 {
-background: #000;
-height: 150px;
-border-radius: 50px;
-}
-.text1 {
-color: #fff;
-size: 20px;
-}
-
-#count{
-    background: #fff;
-    border-radius: 10px;
-    font-size: 20px;
-}
-#ins{
-    background: #fff;
-    border-radius: 10px;
-    font-size: 20px;
-    margin: 7%;
-    padding: 5px;
-}
-        </style>
-        </head>
-
-        <body  style="background: #fff; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Enigma_Machine_-_Flickr_-_The_Central_Intelligence_Agency_(2).jpg');">
-            <div class="container">
-                <div id="ins">
-The Computer has chosen 3 numbers, each between 0 and 9. In the boxes below enter a number to guess the correct combination. If your guess is wrong the box will light up red. If your guess is correct the box will light up green. If you guess a correct number of the sequence but have it entered into the wrong box, that box will light up yellow. You have 10 attempts to guess the correct combination if you fail you will be insulted, verbally.
-                    </div>
-                <div class ="row">
-<div id ="col1" class = "col-md-3 col-md-offset-1">
-    <input type="number"  id="guessA" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
-    </div>
-    <div id ="col2" class = "col-md-3 col-md-offset-1">
-        <input type="number" id="guessB" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
-    </div>
-    <div id ="col3" class = "col-md-3 col-md-offset-1">
-        <input type="number"  id="guessC" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max = "9" placeholder="guess">
-    </div>
-</div>
-<div class ="row">
-<div class="col-md-1 col-md-offset-5">
-<button type="button" onclick = "start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)" class="btn btn-default"  style="margin-top: 5px; margin-left: 45px; border-radius: 100px; height: 50px;">
+<body style="background: #fff; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Enigma_Machine_-_Flickr_-_The_Central_Intelligence_Agency_(2).jpg');">
+    <div class="container">
+        <div id="ins">
+            The Computer has chosen 3 numbers, each between 0 and 9. In the boxes below enter a number to guess the correct combination.
+            If your guess is wrong the box will light up red. If your guess is correct the box will light up green. If you
+            guess a correct number of the sequence but have it entered into the wrong box, that box will light up yellow.
+            You have 10 attempts to guess the correct combination if you fail you will be insulted, verbally.
+        </div>
+        <div class="row">
+            <div id="col1" class="col-md-3 col-md-offset-1">
+                <input type="number" id="guessA" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max="9" placeholder="guess">
+            </div>
+            <div id="col2" class="col-md-3 col-md-offset-1">
+                <input type="number" id="guessB" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max="9" placeholder="guess">
+            </div>
+            <div id="col3" class="col-md-3 col-md-offset-1">
+                <input type="number" id="guessC" style="margin: auto; margin-top: 50px; line-height: 50px; font-size: 22px;" max="9" placeholder="guess">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-5">
+                <button type="button" onclick="start(document.getElementById('guessA').value, document.getElementById('guessB').value, document.getElementById('guessC').value)"
+                    class="btn btn-default" style="margin-top: 5px; margin-left: 45px; border-radius: 100px; height: 50px;">
     <span class="glyphicon glyphicon-plus" Style="font-size: 20px;" aria-hidden="true"></span>MAKE GUESS
   </button>
-  </div>
-  <div id="count" class="col-md-12">
-      <span class=>You have 10 guesses left</span>
-      </div>
-  </div>
-  </div>
-            </body>
-            </html>
+            </div>
+            <div id="count" class="col-md-12">
+                <span class=>You have 10 guesses left</span>
+            </div>
+            
+        </div>
+        <div class="row">
+                <div id="reset">
+                    <input type="button" value="Reset" class="btn btn-default" onClick="window.location.reload()">
+                </div>
+            </div>
+    </div>
+</body>
+
+</html>
